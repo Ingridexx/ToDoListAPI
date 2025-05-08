@@ -22,3 +22,10 @@ Uma API RESTful para gerenciar tarefas, construída com FastAPI, PostgreSQL e Re
 - **Serviços**: Contêm lógica de negócio.
 - **Repositórios**: Interagem com o banco.
 - **Cache**: Redis melhora a performance do `GET /tasks`.
+
+----
+
+Este projeto ainda não foi finalizado... pretendo adicionar:
+- **Testes Automatizados**
+- **Monitoramento de Performance**
+- **Deploy**
