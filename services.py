@@ -1,6 +1,6 @@
 from repositories import create_task, get_tasks, update_task, delete_task
 from sqlalchemy.orm import Session
-from cache import get_cached_tasks, set_cached_tasks  # Note o plural
+from cache import get_cached_tasks, set_cached_tasks 
 
 def create_task_service(db: Session, title: str, description: str):
     if not title:
@@ -12,7 +12,6 @@ def get_tasks_service(db: Session):
     if cached_tasks:
         return cached_tasks
     tasks = get_tasks(db)
-    # Use to_dict para serializar as tarefas
     tasks_dict = [task.to_dict() for task in tasks]
     set_cached_tasks(tasks_dict)
     return tasks_dict
