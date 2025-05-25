@@ -17,7 +17,7 @@ def get_tasks_service(db: Session):
     if cached_tasks:
         return cached_tasks
     tasks = get_tasks(db)
-    tasks_dict = [task.to_dict() for task in tasks]
+    tasks_dict = [task_to_dict(task) for task in tasks]
     set_cached_tasks(tasks_dict)
     return tasks_dict
 
