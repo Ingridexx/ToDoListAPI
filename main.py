@@ -1,8 +1,11 @@
+# Rotas FastAPI e chamadas aos serviços
+
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
-from models import SessionLocal, Task
-from services import create_task_service, get_tasks_service, update_task_service, delete_task_service
 from pydantic import BaseModel
+from database_config import SessionLocal
+from services import create_task_service, get_tasks_service, update_task_service, delete_task_service
+from utils import task_to_dict
 
 app = FastAPI()
 
